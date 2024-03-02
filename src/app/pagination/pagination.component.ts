@@ -40,7 +40,7 @@ export class PaginationComponent {
   protected pages = computed<PageItem[]>(() => {
     const page = this.currentPage();
     const totalPages = this.totalPages();
-    let pagesArray: PageItem[] = [];
+    const pagesArray: PageItem[] = [];
     let beforePage = page - 1;
     let afterPage = page + 1;
     const symbol = '...';
