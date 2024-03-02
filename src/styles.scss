@@ -1,0 +1,54 @@
+/* You can add global styles to this file, and also import other style files */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+$light-theme-colors: (
+  primary-color: #fff,
+  secondary-color: #f2f2f2,
+  text-color: #000000,
+  text-color-reverse: #ffffff,
+  anchor-link-color:#0000ff,
+);
+
+$dark-theme-colors: (
+  primary-color: #202124,
+  secondary-color: #171717,
+  text-color: #ffffff,
+  text-color-reverse: #000000,
+  anchor-link-color:#a3a3ff,
+);
+
+@mixin apply-theme-colors($colors) {
+  @each $property, $value in $colors {
+    --#{$property}: #{$value};
+  }
+}
+
+:root {
+  --main-color: red;
+  --navbar-height: 48px;
+  --sidebar-closed-width: 48px;
+  --sidebar-opened-width: 210px;
+  --main-container-margin: 18px;
+}
+
+.light-theme {
+  @include apply-theme-colors($light-theme-colors);
+}
+
+.dark-theme {
+  @include apply-theme-colors($dark-theme-colors);
+}
+
+body {
+  background-color: var(--primary-color);
+}

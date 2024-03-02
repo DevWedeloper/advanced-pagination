@@ -1,0 +1,26 @@
+<ul class="pagination">
+  @for (item of pages(); track index; let index = $index) {
+    <li
+      [ngClass]="{
+        'page-item': true,
+        active: isPageActive(item)
+      }"
+      (click)="handlePageClick(item)"
+      (keyup.enter)="handlePageClick(item)"
+      tabindex="0"
+    >
+      <span class="page-link">{{ displayItem(item) }}</span>
+    </li>
+  }
+  @if (showGoToPage()) {
+    <li>
+      Go to
+      <input
+        #searchInput
+        type="number"
+        (keydown.Enter)="emitGoToPage(searchInput.value)"
+      />
+      page
+    </li>
+  }
+</ul>

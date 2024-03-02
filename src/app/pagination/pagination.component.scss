@@ -1,0 +1,67 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pagination {
+  display: flex;
+  gap: 0.5rem;
+  padding-left: 0;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+}
+.page-item {
+  display: inline;
+  border-radius: 0.25rem;
+}
+.page-item.active .page-link,
+.page-item.active .page-link:focus,
+.page-item.active .page-link:hover {
+  color: var(--secondary-color);
+  cursor: default;
+  background-color: #5cb85c;
+  border-color: #5cb85c;
+}
+.page-item.disabled .page-link,
+.page-item.disabled .page-link:focus,
+.page-item.disabled .page-link:hover {
+  color: #818a91;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: var(--secondary-color);
+  border-color: #ddd;
+}
+.page-link {
+  position: relative;
+  float: left;
+  padding: 0.5rem 0.75rem;
+  color: #5cb85c;
+  text-decoration: none;
+  background-color: var(--secondary-color);
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+.page-link:focus,
+.page-link:hover {
+  background-color: var(--primary-color);
+}
+
+input {
+  width: 3rem;
+  height: 100%;
+  border: 1px solid var(--text-color);
+  border-radius: 0.25rem;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-color);
+  padding: 0.5rem;
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
